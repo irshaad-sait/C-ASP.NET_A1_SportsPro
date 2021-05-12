@@ -1,0 +1,77 @@
+﻿@model List<Product>
+
+@{
+    ViewData["Title"] = "Product Manager";
+}
+
+<h1>Product Manager</h1>
+
+<p>
+    <a asp-action="Create" class="btn btn-primary">Create New</a>
+</p>
+<table class="table">
+    @*<thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ProductID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ProductCode)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].YearlyPrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model[0].ReleaseDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>*@
+    <thead>
+        <tr>
+            <th>
+                Product Code
+            </th>
+            <th>
+               Name
+            </th>
+            <th>
+               Price
+            </th>
+            <th>
+               Release Date
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProductCode)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @item.YearlyPrice.ToString("C2")
+                </td>
+                <td>
+                    @item.ReleaseDate.ToShortDateString()
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id=item.ProductID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ProductID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ProductID })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
