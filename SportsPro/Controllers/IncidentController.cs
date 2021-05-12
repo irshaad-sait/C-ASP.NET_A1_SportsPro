@@ -27,7 +27,6 @@ namespace SportsPro.Controllers
         // GET: IncidentController/Details/5
         public ActionResult Details(int id)
         {
-            ViewBag.Countries = context.Countries.OrderBy(c => c.Name).ToList();
             var Incident = context.Incidents.Find(id);
             return View(Incident);
         }
