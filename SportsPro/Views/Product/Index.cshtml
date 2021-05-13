@@ -7,33 +7,14 @@
 <h1>Product Manager</h1>
 
 <p>
-    <a asp-action="Create" class="btn btn-primary">Create New</a>
+    <a asp-action="Create" class="btn btn-info">Add New</a>
 </p>
-<table class="table">
-    @*<thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model[0].ProductID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model[0].ProductCode)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model[0].Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model[0].YearlyPrice)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model[0].ReleaseDate)
-            </th>
-            <th></th>
-        </tr>
-    </thead>*@
+<table class="table table-bordered">
+
     <thead>
         <tr>
             <th>
-                Product Code
+                Code
             </th>
             <th>
                Name
@@ -51,9 +32,6 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.ProductID)
-                </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.ProductCode)
                 </td>

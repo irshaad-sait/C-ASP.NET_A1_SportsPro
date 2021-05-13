@@ -6,6 +6,10 @@ h1 {
     font-size: 20pt;
 }
 
+body {
+    background-color: lightseagreen;
+}
+
 /* Sticky footer styles
 -------------------------------------------------- */
 
@@ -21,6 +25,8 @@ html {
 body {
   /* Margin bottom by footer height */
   margin-bottom: 40px;
+  background-image:url(../images/stadium.jpg);
+  background-color:lightseagreen;
 }
 .footer {
   position: absolute;

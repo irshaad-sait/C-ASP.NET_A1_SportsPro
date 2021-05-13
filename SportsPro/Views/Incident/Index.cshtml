@@ -1,15 +1,15 @@
 ﻿@model List<Incident>
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Incident Manager";
 }
 
-<h1>Index</h1>
+<h1>Incident Manager</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-info">Add New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
@@ -40,38 +40,39 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.IncidentID)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Customer.FullName)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Product.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Technician.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Title)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateOpened)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.DateClosed)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id=item.IncidentID}) |
-                @Html.ActionLink("Details", "Details", new { id = item.IncidentID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.IncidentID })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.IncidentID)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.FullName)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Product.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Technician.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateOpened)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DateClosed)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.IncidentID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.IncidentID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.IncidentID })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>

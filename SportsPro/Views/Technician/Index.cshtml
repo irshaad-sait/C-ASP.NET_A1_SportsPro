@@ -7,9 +7,9 @@
 <h1>Technician Manager</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create" class="btn btn-info">Add New</a>
 </p>
-<table class="table">
+<table class="table table-bordered">
     <thead>
         <tr>
             <th>
@@ -25,23 +25,24 @@
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Name)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Phone)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new {id=item.TechnicianID }) |
-                @Html.ActionLink("Details", "Details", new { id = item.TechnicianID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.TechnicianID })
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Email)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Phone)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.TechnicianID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.TechnicianID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.TechnicianID })
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
